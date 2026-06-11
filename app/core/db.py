@@ -4,7 +4,7 @@ from typing import AsyncGenerator
 from sqlalchemy.ext.asyncio import async_sessionmaker, create_async_engine
 from sqlalchemy.orm import DeclarativeBase
 
-DATABASE_URL = "postgresql+asyncpg://postgres:1234@localhost:5432/tododb"
+DATABASE_URL = "postgresql+asyncpg://smilelylion:password1234@localhost:5439/tododb"
 
 
 class Base(DeclarativeBase):
