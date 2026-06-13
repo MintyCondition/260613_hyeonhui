@@ -1,4 +1,6 @@
 # app/repository/todo_repository.py
+from typing import Optional
+
 from sqlalchemy import delete, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
@@ -32,7 +34,7 @@ class TodoRepository:
         self,
         db: AsyncSession,
         todo_id: int,
-    ) -> Todo | None:
+    ) -> Optional[Todo]:
         result = await db.execute(select(Todo).where(Todo.id == todo_id))
         return result.scalar_one_or_none()
 
